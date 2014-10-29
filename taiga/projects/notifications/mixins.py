@@ -62,7 +62,8 @@ class WatchedResourceMixin(object):
 
         # Get a complete list of notifiable users for current
         # object and send the change notification to them.
-        services.send_notifications(obj, history=history)
+        users = services.get_users_to_notify(obj, history=history)
+        services.send_notifications(obj, history=history, users=users)
 
     def post_save(self, obj, created=False):
         self.send_notifications(obj)

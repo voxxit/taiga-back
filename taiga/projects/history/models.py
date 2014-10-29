@@ -77,18 +77,6 @@ class HistoryEntry(models.Model):
     is_snapshot = models.BooleanField(default=False)
 
     @cached_property
-    def is_change(self):
-      return self.type == HistoryType.change
-
-    @cached_property
-    def is_create(self):
-      return self.type == HistoryType.create
-
-    @cached_property
-    def is_delete(self):
-      return self.type == HistoryType.delete
-
-    @cached_property
     def owner(self):
         pk = self.user["pk"]
         model = apps.get_model("users", "User")
@@ -210,3 +198,4 @@ class HistoryEntry(models.Model):
 
     class Meta:
         ordering = ["created_at"]
+
