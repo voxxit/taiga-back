@@ -12,7 +12,7 @@ djmail==0.9
 django-pgjson==0.2.0
 djorm-pgarray==1.0.4
 django-jinja==1.0.4
-jinja2==2.7.2
+jinja2==2.11.3
 pygments==1.6
 django-sites==0.8
 Markdown==2.4.1
